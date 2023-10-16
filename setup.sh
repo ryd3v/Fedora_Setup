@@ -23,3 +23,12 @@ export NVM_DIR="$HOME/.nvm"
 nvm install --lts
 sudo dnf install yarnpkg -y
 sudo dnf install openvpn -y
+sudo tee -a /etc/sysctl.d/99-swappiness.conf > /dev/null  <<EOF
+vm.swappiness=1
+EOF
+
+sudo dnf upgrade --best --allowerasing --refresh -y
+
+sudo dnf install -y calibre exfat-utils ffmpeg fuse-exfat git gnome-tweaks gvfs-fuse gvfs-mtp gvfs-nfs gvfs-smb htop lm_sensors mpv p7zip p7zip-plugins transmission adobe-source-code-pro-fonts google-roboto-fonts.noarch jetbrains-mono-fonts-all.noarch
+
+echo "Please Reboot" && exit 0
