@@ -31,4 +31,6 @@ sudo dnf upgrade --best --allowerasing --refresh -y
 
 sudo dnf install -y calibre exfat-utils ffmpeg fuse-exfat git gnome-tweaks gvfs-fuse gvfs-mtp gvfs-nfs gvfs-smb htop lm_sensors mpv p7zip p7zip-plugins transmission adobe-source-code-pro-fonts google-roboto-fonts.noarch jetbrains-mono-fonts-all.noarch
 
+sudo dnf install rpm-build -y
+
 echo "Please Reboot" && exit 0
