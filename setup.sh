@@ -33,4 +33,8 @@ sudo dnf install -y calibre exfat-utils ffmpeg fuse-exfat git gnome-tweaks gvfs-
 
 sudo dnf install rpm-build -y
 
+sudo dnf group install --with-optional virtualization -y
+sudo systemctl start libvirtd
+sudo systemctl enable libvirtd
+
 echo "Please Reboot" && exit 0
