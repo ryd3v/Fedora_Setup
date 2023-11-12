@@ -1,4 +1,4 @@
-gsettings set org.gnome.mutter experimental-features "['scale-monitor-framebuffer']"
+
 sudo dnf update
 sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -y
 sudo dnf groupupdate core -y
@@ -32,9 +32,25 @@ sudo dnf upgrade --best --allowerasing --refresh -y
 sudo dnf install -y calibre exfat-utils ffmpeg fuse-exfat git gnome-tweaks gvfs-fuse gvfs-mtp gvfs-nfs gvfs-smb htop lm_sensors mpv p7zip p7zip-plugins transmission adobe-source-code-pro-fonts google-roboto-fonts.noarch jetbrains-mono-fonts-all.noarch
 
 sudo dnf install rpm-build -y
-
 sudo dnf group install --with-optional virtualization -y
 sudo systemctl start libvirtd
 sudo systemctl enable libvirtd
 
-echo "Please Reboot" && exit 0
+# Install Gnome GTK Theme
+git clone https://github.com/vinceliuice/WhiteSur-gtk-theme.git --depth=1
+cd WhiteSur-gtk-theme/
+./install.sh
+./tweaks.sh -d
+./tweaks.sh -F
+./install.sh -l
+
+# Run the gsettings command as the regular user
+if [ -n "$SUDO_USER" ]; then
+    sudo -u $SUDO_USER gsettings set org.gnome.mutter experimental-features "['scale-monitor-framebuffer']"
+else
+    echo "This script must be run with sudo."
+    exit 1
+fi
+
+echo "Please Reboot"
+exit 0
