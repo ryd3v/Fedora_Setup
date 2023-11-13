@@ -30,7 +30,7 @@ EOF
 sudo dnf upgrade --best --allowerasing --refresh -y
 
 sudo dnf install -y calibre exfat-utils ffmpeg fuse-exfat git gnome-tweaks gvfs-fuse gvfs-mtp gvfs-nfs gvfs-smb htop lm_sensors mpv p7zip p7zip-plugins transmission adobe-source-code-pro-fonts google-roboto-fonts.noarch jetbrains-mono-fonts-all.noarch
-
+sudo dnf install audacious.x86_64 audacious-plugins.x86_64 -y
 sudo dnf install rpm-build -y
 sudo dnf group install --with-optional virtualization -y
 sudo systemctl start libvirtd
