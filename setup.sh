@@ -13,7 +13,7 @@ sudo dnf install seahorse -y
 sudo dnf install vlc -y
 flatpak install flathub com.authy.Authy -y
 flatpak install flathub org.mozilla.Thunderbird -y
-sudo dnf install discord -y
+sudo dnf install gnome-themes-extra
 flatpak install flathub fr.handbrake.ghb -y
 flatpak install flathub org.remmina.Remmina -y
 wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
@@ -35,22 +35,6 @@ sudo dnf install rpm-build -y
 sudo dnf group install --with-optional virtualization -y
 sudo systemctl start libvirtd
 sudo systemctl enable libvirtd
-
-# Install Gnome GTK Theme
-git clone https://github.com/vinceliuice/WhiteSur-gtk-theme.git --depth=1
-cd WhiteSur-gtk-theme/
-./install.sh
-./tweaks.sh -d
-./tweaks.sh -F
-./install.sh -l
-
-# Run the gsettings command as the regular user
-if [ -n "$SUDO_USER" ]; then
-    sudo -u $SUDO_USER gsettings set org.gnome.mutter experimental-features "['scale-monitor-framebuffer']"
-else
-    echo "This script must be run with sudo."
-    exit 1
-fi
 
 echo "Please Reboot"
 exit 0
