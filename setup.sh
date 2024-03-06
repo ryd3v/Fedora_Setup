@@ -13,7 +13,7 @@ sudo dnf install seahorse -y
 sudo dnf install vlc -y
 flatpak install flathub com.authy.Authy -y
 flatpak install flathub org.mozilla.Thunderbird -y
-sudo dnf install gnome-themes-extra
+sudo dnf install gnome-themes-extra -y
 flatpak install flathub fr.handbrake.ghb -y
 flatpak install flathub org.remmina.Remmina -y
 wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
