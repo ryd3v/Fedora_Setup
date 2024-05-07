@@ -1,5 +1,5 @@
 
-sudo dnf update
+sudo dnf update -y
 sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -y
 sudo dnf groupupdate core -y
 sudo dnf install gstreamer1-plugins-{bad-\*,good-\*,base} gstreamer1-plugin-openh264 gstreamer1-libav --exclude=gstreamer1-plugins-bad-free-devel -y
@@ -35,6 +35,11 @@ sudo dnf install rpm-build -y
 sudo dnf group install --with-optional virtualization -y
 sudo systemctl start libvirtd
 sudo systemctl enable libvirtd
+
+sudo dnf install -y gnome-tweaks
+sudo dnf install -y google-roboto-fonts.noarch
+sudo dnf install -y jetbrains-mono-fonts-all.noarch
+sudo flatpak install flathub com.mattjakeman.ExtensionManager -y
 
 echo "Please Reboot"
 exit 0
