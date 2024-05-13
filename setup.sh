@@ -41,5 +41,7 @@ sudo dnf install -y google-roboto-fonts.noarch
 sudo dnf install -y jetbrains-mono-fonts-all.noarch
 sudo flatpak install flathub com.mattjakeman.ExtensionManager -y
 
+sudo dnf install -y portaudio.x86_64 portaudio-devel.x86_64
+
 echo "Please Reboot"
 exit 0
