@@ -19,9 +19,6 @@ sudo dnf install seahorse -y
 
 sudo dnf install gnome-themes-extra -y
 
-flatpak install flathub fr.handbrake.ghb -y
-flatpak install flathub org.remmina.Remmina -y
-
 wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
 
 export NVM_DIR="$HOME/.nvm"
@@ -52,12 +49,8 @@ sudo dnf install -y gnome-tweaks
 sudo dnf install -y google-roboto-fonts.noarch
 sudo dnf install -y jetbrains-mono-fonts-all.noarch
 
-sudo flatpak install flathub com.mattjakeman.ExtensionManager -y
-
 sudo dnf install -y portaudio.x86_64 portaudio-devel.x86_64
-
 sudo dnf install -y audacious-plugins-freeworld-aac.x86_64 audacious-plugins-ffaudio.x86_64 audacious-plugins.x86_64
-
 sudo dnf install -y python3-devel
 
 sudo dnf swap ffmpeg-free ffmpeg --allowerasing -y
@@ -70,6 +63,14 @@ sudo dnf install -y libdvdcss
 sudo dnf install -y rpmfusion-nonfree-release-tainted
 sudo dnf --repo=rpmfusion-nonfree-tainted install "*-firmware" -y
 sudo dnf install -y dc3dd
+
+# Flatpak
+flatpak install flathub fr.handbrake.ghb -y
+flatpak install flathub org.remmina.Remmina -y
+sudo flatpak install flathub com.mattjakeman.ExtensionManager -y
+sudo flatpak install flathub org.gnome.Firmware -y
+sudo flatpak install flathub com.discordapp.Discord -y 
+sudo flatpak install flathub me.timschneeberger.jdsp4linux -y
 
 echo "Please Reboot"
 exit 0
